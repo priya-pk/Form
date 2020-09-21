@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="login">
+    <h1>LOGIN</h1>
+    <form #userLogin="ngForm" (ngSubmit)="loginUser()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="loginUserData.email"  name="email"  [class.is-invalid]="email.invalid && email.touched" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" required>
+        <small class="text-danger" [class.d-none]="email.valid || email.touched">Invalid email</small>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input type="password" class="form-control" id="pwd" [(ngModel)]="loginUserData.password" name="password" [class.is-invalid]="password.invalid && password.touched"  minlength="6" #password="ngModel" required>
+        <small class="text-danger" [class.d-none]="password.valid || password.touched">Invalid password</small>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="check">
+        <label class="form-check-label" for="check">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-success btn-block">Login</button>
+    </form>
+  </div>
+</div>
+

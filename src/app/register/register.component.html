@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="register">
+    <h1>REGISTER</h1>
+    <form class="form" #userLogin="ngForm" (ngSubmit)="registerUser()">
+      <div class="form-group">
+        <label for="userName">UserName</label>
+        <input type="text" class="form-control" id="userName" name="userName" #userName="ngModel" [class.is-invalid]="userName.invalid && userName.touched" [(ngModel)]="registerUserData.userName" minlength="2" required>
+        <small class="text-danger" [class.d-none]="userName.valid || userName.touched">UserName is required</small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="registerUserData.email" [class.is-invalid]="email.invalid && email.touched" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email="ngModel" required>
+        <small class="text-danger"  [class.d-none]="email.valid || email.touched">Invalid email</small>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="pwd">Password</label>
+          <input type="password" class="form-control" id="pwd"  [(ngModel)]="registerUserData.password" [class.is-invalid]="password.invalid && password.touched" name="password" minlength="6" #password="ngModel"  required>
+          <small class="text-danger" [class.d-none]="password.valid || password.touched">Invalid password</small>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" class="form-control" id="confirm"  [(ngModel)]="registerUserData.confirmPassword" [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" name="confirmPassword" minlength="6" #confirmPassword="ngModel" required>
+          <small class="text-danger" [class.d-none]="confirmPassword.valid || confirmPassword.touched">Invalid Confirm Password</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" #phone="ngModel" [(ngModel)]="registerUserData.phone" pattern="^(\d{10})|(\d{4}-\d{3}-\d{3})|(\d{3}\s\d{3}\s\d{4})|(\d{3}\.\d{3}\.\d{4})$" required>
+        <small class="text-danger" [class.d-none]="phone.valid || phone.touched">Invalid phone</small>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="check">
+        <label class="form-check-label" for="check">Check me out</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" [disabled]="userLogin.form.invalid" >Register</button>
+    </form>
+    
+  </div>
+</div>
+

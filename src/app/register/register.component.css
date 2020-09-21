@@ -1,0 +1,19 @@
+.container-fluid{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+.register{
+  width: 400px ;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 5px #aaaaaa;
+  border-radius: 10px;
+}
+h1{
+  text-align: center;
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+}

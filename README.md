@@ -25,3 +25,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+"This is a simple registration form where user can register using their username, email, password and phone number. UserName must contain atleast 2 letters, email must satisfy usuall emails condition, password must contain minimum 6 letters, phone number must contain 10 numbers. After registration form will redirect to login form.  In Login Form, user must enter the registered email and password to login successfully." 
